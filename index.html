@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teaching Js</title>
+  </head>
+  <body>
+  <style>
+    input[type=text], select {
+      width: 25%;
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    div {
+      width: 50%;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+    <h1>Main Page!</h1>
+    <div>
+      <form id="basicInfo">
+        <label for="name">Name: </label>
+        <input style="margin-left: 86px; margin-bottom: 10px;" type="text" id="myName" value="Enter your name" onfocus="clearTextboxName()" onblur="fillTextboxName()"/><br>
+        <label for="age">Age: </label>
+        <input style="margin-left: 103px; margin-bottom: 10px" type="text" id="myAge" value="Enter your age" onfocus="clearTextboxAge()" onblur="fillTextboxAge()"><br>
+        <label for="colour">Favourite colour: </label>
+        <input type="text" id="myColour" value="Enter your favourite colour" onfocus="clearTextboxColour()" onblur="fillTextboxColour()"><br>
+      </form>
+  </div>
+
+  <button style="margin-top: 15px; margin-bottom: 15px;" id="sayHello" onclick="sayHello()">Say hello!</button>
+  <br>
+  <a href="page2.html"><button id="nextPage">Next Page ==></button></a>
+
+    <script>
+    String.prototype.format = function() {
+      var content = this;
+      for (var i=0; i < arguments.length; i++) {
+        var replacement = '{' + i + '}';
+        content = content.replace(replacement, arguments[i]);
+      }
+    return content;
+    }
+
+
+    function sayHello() {
+
+      var name = document.getElementById("myName").value.trim();
+      var age = document.getElementById("myAge").value.trim();
+      var colour = document.getElementById("myColour").value.trim();
+
+
+      if (name == "Enter your name") {
+        alert("Looks like you didn't enter a name!");
+      } else if (age == "Enter your age") {
+        alert("Looks like you didn't enter an age!")
+      } else if (colour == "Enter your favourite color") {
+        alert("Looks like you didn't enter your favourite colour!")
+      } else {
+        alert('Hello, {0}!. I see you are {1} years old and that your favourite color is {2}. My favourite colour is blue!'.format(name, age, colour));
+      }
+    }
+
+
+    function clearTextboxName() {
+      if (myName.value == "Enter your name") {
+        myName.value = "";
+      }
+    }
+
+
+    function clearTextboxAge() {
+      if (myAge.value == "Enter your age") {
+        myAge.value = "";
+      }
+    }
+
+
+    function clearTextboxColour() {
+      if (myColour.value == "Enter your favourite colour") {
+        myColour.value = "";
+      }
+    }
+
+
+    function fillTextboxName() {
+      var val = myName.value;
+      val = val.trim();
+      if (val == "") {
+        myName.value = "Enter your name";
+      } else {
+        myName.value = val;
+      }
+    }
+
+
+    function fillTextboxAge() {
+      var val = myAge.value;
+      val = val.trim();
+      if (val == "") {
+        myAge.value = "Enter your age";
+      } else {
+        myAge.value = val;
+      }
+    }
+
+
+    function fillTextboxColour() {
+      var val = myColour.value;
+      val = val.trim();
+      if (val == "") {
+        myColour.value = "Enter your favourite colour";
+      } else {
+        myColour.value = val;
+      }
+    }
+    </script>
+  </body>
+</html>
