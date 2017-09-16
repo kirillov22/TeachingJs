@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Teaching Js</title>
+  </head>
+  <body>
+  <!-- Leave this alone or you may break something -->
+  <style>
+    input[type=text], select {
+
+      padding: 12px 20px;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    div {
+      width: 18%;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+  </style>
+  <!-- It is also recommended that you leave this alone -->
+    <h1>Main Page!</h1>
+    <div>
+      <form id="basicInfo">
+        <label for="name">Name: </label>
+        <input style="margin-left: 86px; margin-bottom: 10px;" type="text" id="myName" value="Enter your name" onfocus="clearTextboxName();" onblur="fillTextboxName();"/><br>
+        <label for="age">Age: </label>
+        <input style="margin-left: 103px; margin-bottom: 10px" type="text" id="myAge" value="Enter your age" onfocus="clearTextboxAge();" onblur="fillTextboxAge();"><br>
+        <label for="colour">Favourite colour: </label>
+        <input type="text" id="myColour" value="Enter your favourite colour" onfocus="clearTextboxColour();" onblur="fillTextboxColour();"><br>
+      </form>
+  </div>
+
+  <!-- TASK 1: Make this button do the function "sayHello" when clicked -->
+  <button style="margin-top: 15px; margin-bottom: 15px;" id="sayHello" onclick="sayHello();">Say hello!</button>
+  <!-- END TASK 1 -->
+  <br>
+  <!-- TASK 2: Make this button goto the next page when clicked -->
+  <button id="nextPage">Next Page ==></button>
+  <!-- END TASK 2 -->
+
+
+    <script>
+    // Please do not change anything here!
+      window.onerror = function(msg, url, linenumber) {
+        alert('Error message: '+msg+'\nURL: '+url+'\nLine Number: '+linenumber);
+        return true;
+      }
+    // Don't change anything here either!
+      String.prototype.format = function() {
+        var content = this;
+        for (var i=0; i < arguments.length; i++) {
+          var replacement = '{' + i + '}';
+          content = content.replace(replacement, arguments[i]);
+        }
+      return content;
+      }
+
+      // This is the function you must complete
+      function sayHello() {
+
+        // Leave these as they are!
+        var name = document.getElementById("myName").value.trim();
+        var age = document.getElementById("myAge").value.trim();
+        var colour = document.getElementById("myColour").value.trim();
+
+
+        // TASK 3: Check to see if anything has actually been entered into
+        // the text boxes. Show an alert saying if it hasn't
+        // HINT: Use an if statement which is followed by else if's
+        // and finally an else.
+        if /*Check for condition*/ {
+          /*Do something if that condition is met*/
+          alert("Looks like you didn't enter a name!");
+        } else if /*Check for condition*/ {
+          /*Do something if that condition is met*/
+        } else if /*Check for condition*/ {
+          /*Do something if that condition is met*/
+        } else {
+          alert('Hello, {0}! I see you are {1} years old and that your favourite color is {2}. My favourite colour is blue!'.format(name, age, colour));
+        }
+      }
+      // END TASK 3
+
+
+      // TASK 4a: Clear the name textbox if the user has not input anything into it
+      // HINT: Using an if statement would be pretty good here!
+      function clearTextboxName() {
+        if (myName.value == "Enter your name") {
+          myName.value = "";
+        }
+      }
+      // END TASK 4a
+
+
+      // TASK 4b: Clear the age textbox if the user has not input anything into it
+      // HINT: Using an if statement would be pretty good here!
+      function clearTextboxAge() {
+        alert('Not implemented yet!');
+      }
+      // END TASK 4b
+
+
+      // TASK 4c: Clear the colour textbox if the user has not input anything into it
+      // HINT: Using an if statement would be pretty good here!
+      function clearTextboxColour() {
+        alert('Not implemented yet!');
+      }
+      // END TASK 4c
+
+
+      // TASK 5a: Fill the textboxes to their default value
+      function fillTextboxName() {
+        var val = myName.value;
+        val = val.trim();
+        // start here
+
+      }
+      // END TASK 5a
+
+
+      // TASK 5b: Fill the textboxes to their default value
+      function fillTextboxAge() {
+        var val = myAge.value;
+        val = val.trim();
+        // start here
+        
+      }
+      // END TASK 5b
+
+
+      // TASK 5c: Fill the textboxes to their default value
+      function fillTextboxColour() {
+        var val = myColour.value;
+        val = val.trim();
+        // start here
+
+      }
+      // END TASK 5c
+    </script>
+  </body>
+</html>
