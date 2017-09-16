@@ -1,12 +1,47 @@
 <html>
   <head>
     <title>Teaching Js - Page 3</title>
+    <style>
+
+    </style>
   </head>
   <body>
     <h1>Page 3</h1>
-    <a href = "page2.html"><button id="prevPage"><== Previous Page</button></a>
+    <a href = "page2.html"><button id="prevPage"><== Previous Page</button></a><br><br>
+    <input type="button" id="blueBtn" value="I need to be blue!" onmouseover="setBlue();" onclick="setDefault(blueBtn);"></input><br><br>
+    <input type="button" id="redBtn" value="I need to be red!" onmouseover="setRed();" onclick="setDefault(redBtn);"></input><br><br>
+    <input type="button" id="greenBtn" value="I need to be green!" onmouseover="setGreen();" onclick="setDefault(greenBtn);"></input><br><br>
+    <input type="button" id="clear" value="Clear CSS" onclick=clearAll();></input>
 
     <script>
+      function clearAll() {
+        var btnRed = document.getElementById(redBtn);
+        btnRed.style.backgroundColor = 'ffffff';
+        btnRed.style.color = '000000';
+
+        var btnBlue = document.getElementById(blueBtn);
+        btnBlue.style.backgroundColor = '';
+        btnBlue.style.backgroundColor = '';
+
+        var btnGreen = document.getElementById(greenBtn);
+        btnGreen.style.backgroundColor = '';
+        btnGreen.style.backgroundColor = '';
+      }
+
+      function setBlue() {
+        document.getElementById("blueBtn").style.backgroundColor = '2196F3';
+        document.getElementById("blueBtn").style.color = 'ffffff';
+      }
+
+      function setRed() {
+        document.getElementById("redBtn").style.backgroundColor = 'b71c1c';
+        document.getElementById("redBtn").style.color = 'ffffff';
+      }
+
+      function setGreen() {
+        document.getElementById("greenBtn").style.backgroundColor = '2E7D32';
+        document.getElementById("greenBtn").style.color = 'ffffff';
+      }
 
     </script>
     </body>
